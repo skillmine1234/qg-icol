@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      icol_validate_step: "I-Collect Validate Step"
+    attributes:
+      icol_validate_step: &attributes
+        app_code:  "App Code"
+        customer_code:  "Customer Code"
+        step_name:  "Step Name"
+        status_code:  "Status"
+        req_timestamp:  "Request Timestamp"
+        rep_timestamp:  "Reply Timestamp"
+  activemodel:
+    models:
+      icol_validate_step_searcher: 'I-Collect Validate Step'
+    attributes:
+      icol_validate_step_searcher:
+        <<: *attributes

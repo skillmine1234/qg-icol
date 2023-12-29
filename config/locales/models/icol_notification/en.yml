@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      icol_notification: "I-Collect Notification"
+    attributes:
+      icol_notification: &attributes
+        app_code:  "App Code"
+        customer_code:  "Customer Code"
+        txn_number:  "Transaction Number"
+        status_code:  "Status"
+  activemodel:
+    models:
+      icol_notification_searcher: 'I-Collect Notification'
+    attributes:
+      icol_notification_searcher:
+        <<: *attributes

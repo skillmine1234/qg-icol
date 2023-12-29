@@ -1,0 +1,34 @@
+= form_tag '', :method => 'get', :class => 'form-horizontal', :autocomplete=>"off" do
+  = hidden_field_tag :approval_status, params[:approval_status]
+  .control-group
+    = label_tag "App Code", "App Code", :class => 'control-label'
+    = text_field_tag :app_code, params[:app_code],placeholder: 'Multisearch Search Enabled'
+  .control-group
+    = label_tag "Customer Code", "Customer Code", :class => 'control-label'
+    = text_field_tag :customer_code, params[:customer_code],placeholder: 'Multisearch Search Enabled'
+  .control-group
+    = label_tag "Step Name", "Step Name", :class => 'control-label'
+    = text_field_tag :step_name, params[:step_name],placeholder: 'Multisearch Search Enabled'
+  .control-group
+    = label_tag "Status", "Status", :class => 'control-label'
+    = select_tag :status_code, options_for_select([['NEW','NEW'],['COMPLETED','COMPLETED'],['TIMED OUT','TIMED OUT'],['FAILED','FAILED']],params[:status_code]),:prompt => ''
+  .control-group
+    = label_tag "Request Timestamp", "Request Timestamp", :class => 'control-label'
+    = date_field_tag(:from_req_timestamp, params[:from_req_timestamp])
+    To
+    = date_field_tag(:to_req_timestamp, params[:to_req_timestamp])
+  .control-group
+    = label_tag "Reply Timestamp", "Reply Timestamp", :class => 'control-label'
+    = date_field_tag(:from_rep_timestamp, params[:from_rep_timestamp])
+    To
+    = date_field_tag(:to_rep_timestamp, params[:to_rep_timestamp])
+  .form-actions
+    = button_tag "Search", :class => 'btn btn-primary'
+    = button_tag "Reset", :type => 'button', :value=>'Reset', :class => 'btn', :id => 'icol_validate_step_reset'
+  = hidden_field_tag :advanced_search, :true
+
+
+:javascript
+  $("#icol_validate_step_reset").click(function() {
+    $(this).closest('form').find("input,select").val("");
+  });

@@ -1,0 +1,6 @@
+en:
+  menu:
+    icol_customer: 'ICollect Customer'
+    icol_validate_step: 'ICollect Validate Step'
+    icol_notification: 'ICollect Notification'
+    icol_notify_transaction: 'ICollect Notify Transaction'

@@ -1,0 +1,27 @@
+= form_tag '', :method => 'get', :class => 'form-horizontal', :autocomplete=>"off" do
+  = hidden_field_tag :approval_status, params[:approval_status]
+  .control-group
+    = label_tag "App Code", "App Code", :class => 'control-label'
+    = text_field_tag :app_code, params[:app_code]
+  .control-group
+    = label_tag "Customer Code", "Customer Code", :class => 'control-label'
+    = text_field_tag :customer_code, params[:customer_code]
+  .control-group
+    = label_tag "Transaction Number", "Transaction Number", :class => 'control-label'
+    = text_field_tag :txn_number, params[:txn_number]
+  .control-group
+    = label_tag "Status", "Status", :class => 'control-label'
+    = select_tag :status_code, options_for_select([['NEW','NEW'],['COMPLETED','COMPLETED'],['IN PROCESS','IN PROCESS'],['RETRYING','RETRYING'],['TIMED OUT','TIMED OUT'],['FAILED','FAILED']],params[:status_code]),:prompt => ''
+  .form-actions
+    = button_tag "Search", :class => 'btn btn-primary'
+    = button_tag "Reset", :type => 'button', :value=>'Reset', :class => 'btn', :id => 'icol_notification_reset'
+  = hidden_field_tag :advanced_search, :true
+
+:javascript
+  $(document).ready(function(){
+    $('input[type="text"]'). attr("placeholder", "Multisearch Search Enabled");
+  });
+
+  $("#icol_notification_reset").click(function() {
+    $(this).closest('form').find("input,select").val("");
+  });

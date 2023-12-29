@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      icol_customer: "I-Collect Customer"
+    attributes:
+      icol_customer: &attributes
+        app_code:  "App Code"
+        customer_code:  "Customer Code"
+  activemodel:
+    models:
+      icol_customer_searcher: 'I-Collect Customer'
+    attributes:
+      icol_customer_searcher:
+        <<: *attributes
